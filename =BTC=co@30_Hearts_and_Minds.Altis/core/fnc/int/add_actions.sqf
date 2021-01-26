@@ -193,6 +193,7 @@ if (btc_p_arsenal_Type > 0) then {
     [btc_gear_object, !(btc_p_arsenal_Restrict isEqualTo 1), false] call ace_arsenal_fnc_initBox;
     if (btc_p_arsenal_Type in [2, 4]) then {
         btc_gear_object addAction [localize "STR_BTC_HAM_ACTION_ARSENAL_OPEN_ACE", "[btc_gear_object, player] call ace_arsenal_fnc_openBox;"];
+        btc_gear_object addAction [["<t color='#e0000f'>", "Heal", "</t><img size='2' image='\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_revive_ca.paa'/>"] joinString "", "core\fnc\arsenal\fn_heal.sqf"];
     };
 };
 if !(btc_p_arsenal_Restrict isEqualTo 0) then {[btc_gear_object, btc_p_arsenal_Type, btc_p_arsenal_Restrict, btc_custom_arsenal] call btc_fnc_arsenal_data;};
