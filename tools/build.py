@@ -37,10 +37,17 @@ def main():
     for missionSourcePath in missionSourceList:
 
         # Mod and terrain detection
-        sqmName = missionSourcePath.name.split("_")
-        if len(sqmName) != 1:
-            m, mod, terrainSqf = sqmName
-            terrain, sqf = terrainSqf.split(".")
+        # Treat tpo files differently to account for faction and
+        # maps with _ in the name
+        if 'tpo' == missionSourcePath.parent.name:
+            sqmName = missionSourcePath.name.split("_")
+            mod = sqmName[1] # Faction
+            terrain = '_'.join(sqmName[2:]).split(".")[0]
+        else:
+            sqmName = missionSourcePath.name.split("_")
+            if len(sqmName) != 1:
+                m, mod, terrainSqf = sqmName
+                terrain, sqf = terrainSqf.split(".")
 
         print("{:15}".format(terrain), end="")
 
