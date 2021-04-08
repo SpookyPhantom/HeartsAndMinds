@@ -1,0 +1,61 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Build & Zip Missions",
+            "type": "process",
+            "command": "python",
+            "args": [
+                "${workspaceFolder}/tools/build.py",
+                "-z",
+                "${workspaceFolder}/build"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}/tools"
+            },
+            "problemMatcher": [],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "Build Missions",
+            "type": "process",
+            "command": "python",
+            "args": [
+                "${workspaceFolder}/tools/build.py",
+                "-p",
+                "${workspaceFolder}/build"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}/tools"
+            },
+            "problemMatcher": [],
+            "group": "build"
+        },
+        {
+            "label": "Validate SQF",
+            "type": "process",
+            "command": "python",
+            "args": [
+                "${workspaceFolder}/tools/sqf_validator.py"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}/tools"
+            },
+            "problemMatcher": [],
+            "group": "test"
+        },
+        {
+            "label": "Delete Build",
+            "type": "shell",
+            "command": [
+                "Remove-Item ${workspaceFolder}/build"
+            ],
+            "problemMatcher": []
+        }
+    ]
+}
