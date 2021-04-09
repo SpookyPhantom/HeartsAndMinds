@@ -998,7 +998,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={8526.585,26.035999,6425.625};
-			name="YOUR_MARKER_AREA";
+			name="btc_base";
 			text="USMC";
 			type="flag_USA";
 			id=17;

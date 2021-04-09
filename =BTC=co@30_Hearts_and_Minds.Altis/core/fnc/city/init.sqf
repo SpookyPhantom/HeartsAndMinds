@@ -63,7 +63,7 @@ for "_id" from 0 to (count _locations - 1) do {
 
         if (btc_city_blacklist find _name >= 0) exitWith {};
 
-        if ((getMarkerPos "YOUR_MARKER_AREA") inArea [_position, 500, 500, 0, false]) exitWith {};
+        if ((getMarkerPos "btc_base") inArea [_position, 500, 500, 0, false]) exitWith {};
 
         [_position, _type, _name, _radius, random 1 > _is_free_probability, _id] call btc_fnc_city_create;
     };

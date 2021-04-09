@@ -988,7 +988,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={6812.6519,30.316275,7261.396};
-			name="YOUR_MARKER_AREA";
+			name="btc_base";
 			text="US Army";
 			type="flag_USA";
 			id=88;

@@ -706,7 +706,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={16831.119,30,12459.271};
-			name="YOUR_MARKER_AREA";
+			name="btc_base";
 			text="North Vietnamese Army";
 			type="Faction_UNS_NVA";
 			id=11;
