@@ -8,7 +8,7 @@ class EditorData
 	toggles=521;
 	class ItemIDProvider
 	{
-		nextID=182;
+		nextID=183;
 	};
 	class Camera
 	{
@@ -303,7 +303,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=84;
+		items=85;
 		class Item0
 		{
 			dataType="Object";
@@ -4284,6 +4284,16 @@ class Mission
 			id=181;
 			type="HeadlessClient_F";
 			atlOffset=-0.0019302368;
+		};
+		class Item84
+		{
+			dataType="Marker";
+			position[]={8441.1465,36.3284,6537.5981};
+			name="respawn_west";
+			text="Arsenal/Re-deploy";
+			type="Empty";
+			id=182;
+			atlOffset=-3.0517578e-005;
 		};
 	};
 };

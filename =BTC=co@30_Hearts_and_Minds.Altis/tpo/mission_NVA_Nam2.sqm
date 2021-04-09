@@ -5,10 +5,10 @@ class EditorData
 	angleGridStep=0.2617994;
 	scaleGridStep=1;
 	autoGroupingDist=10;
-	toggles=521;
+	toggles=649;
 	class ItemIDProvider
 	{
-		nextID=99;
+		nextID=100;
 	};
 	class Camera
 	{
@@ -269,7 +269,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=75;
+		items=76;
 		class Item0
 		{
 			dataType="Object";
@@ -554,7 +554,7 @@ class Mission
 			class PositionInfo
 			{
 				position[]={16855.479,30,12315.732};
-				angles[]={-0,3.8657408,0};
+				angles[]={0,3.8657408,0};
 			};
 			name="btc_hc_1";
 			isPlayable=1;
@@ -4009,12 +4009,22 @@ class Mission
 			class PositionInfo
 			{
 				position[]={16859.475,30,12315.281};
-				angles[]={-0,3.8657408,0};
+				angles[]={0,3.8657408,0};
 			};
 			name="btc_hc_2";
 			isPlayable=1;
 			id=98;
 			type="HeadlessClient_F";
+		};
+		class Item75
+		{
+			dataType="Marker";
+			position[]={16881.227,29.999969,12421.795};
+			name="respawn_west";
+			text="Arsenal/Re-deploy";
+			type="Empty";
+			id=99;
+			atlOffset=-3.0517578e-005;
 		};
 	};
 };

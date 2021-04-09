@@ -8,7 +8,7 @@ class EditorData
 	toggles=521;
 	class ItemIDProvider
 	{
-		nextID=258;
+		nextID=259;
 	};
 	class MarkerIDProvider
 	{
@@ -299,7 +299,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=81;
+		items=82;
 		class Item0
 		{
 			dataType="Object";
@@ -831,7 +831,7 @@ class Mission
 			class PositionInfo
 			{
 				position[]={6653.8701,13.57,7273.6719};
-				angles[]={-0,2.5789235,0};
+				angles[]={0,2.5789235,0};
 			};
 			name="btc_hc_1";
 			isPlayable=1;
@@ -3905,12 +3905,22 @@ class Mission
 			class PositionInfo
 			{
 				position[]={6653.3086,13.57,7271.9365};
-				angles[]={-0,2.5789235,0};
+				angles[]={0,2.5789235,0};
 			};
 			name="btc_hc_2";
 			isPlayable=1;
 			id=257;
 			type="HeadlessClient_F";
+		};
+		class Item81
+		{
+			dataType="Marker";
+			position[]={6632.1943,13.569969,7272.0781};
+			name="respawn_west";
+			text="Arsenal/Re-deploy";
+			type="Empty";
+			id=258;
+			atlOffset=-3.0517578e-005;
 		};
 	};
 };
