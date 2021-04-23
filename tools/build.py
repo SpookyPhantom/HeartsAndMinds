@@ -5,6 +5,7 @@
 import argparse
 import os
 import pathlib
+import re
 import shutil
 import subprocess
 import sys
@@ -64,11 +65,30 @@ def main():
             if os.path.exists(missionDestPath):
                 shutil.rmtree(missionDestPath)
 
-            shutil.copytree(rootSourcePath, missionDestPath, ignore=shutil.ignore_patterns('*.sqm'))
+            shutil.copytree(rootSourcePath, missionDestPath, ignore=shutil.ignore_patterns('*.sqm', 'tpo'))
             shutil.copyfile(missionSourcePath, missionDestPath / "mission.sqm")
 
         except IOError as e:
             abort(str(e))
+
+        # tpo mission modifications
+        # Some missions may have player faction on a side that isn't west
+        # Faction can be west, east, guerrila, civilian
+        factions = {'Police': 'guerrila'}
+        for faction in list(factions.keys()):
+            if faction in mod:
+                # Update side
+                with open(os.path.join(missionDestPath, 'core', 'def', 'mission.sqf'), "r+") as f:
+                    content = f.read()
+                    f.seek(0)
+                    f.write(re.sub(r"(\s+missionNamespace.*)(west)(.*)",
+                                   r"\1"+f"{factions[faction]}"+r"\3",
+                                   content,
+                                   re.M))
+                    f.truncate()
+                # Update equipment
+                shutil.copyfile(missionSourcePath.parent.absolute() / (faction+".sqf"), missionDestPath / "define_mod.sqf")
+
 
         # pbo file generation
         if args.zip or args.pbo:
